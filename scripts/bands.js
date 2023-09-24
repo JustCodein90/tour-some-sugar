@@ -5,7 +5,7 @@ const bookings = getBookings()
 const venues = getVenues()
 
 document.addEventListener(
-    click,
+    "click",
     (clickEvent) => {
         const itemClicked = clickEvent.target 
 
@@ -15,7 +15,7 @@ document.addEventListener(
             for (const band of bands) {
                 if (band.id === parseInt(bandId)) {
                     const assignment = filterVenues(band)
-                    const locationName = filterNames(assignment)
+                    const locationName = bookedVenueNames(assignment)
                     window.alert(`Playing at ${locationName}`)
 
                 }
@@ -24,6 +24,32 @@ document.addEventListener(
     }
 )
 
+const filterVenues = (band) => {
+    const assignments = []
+
+    for (const assignment of bookings) {
+        if (assignment.bandId === band.id) {
+            assignments.push(assignment)
+        }
+    }
+
+    return assignments
+}
+
+const bookedVenueNames = (assignments) => {
+    let venueNames = ""
+
+    for (const assignment of assignments) {
+
+        for (const venue of venues) {
+            if (venue.id === assignment.venueId) {
+                venueNames = `${venueNames} and ${venue.name}`
+            }
+        }
+    }
+
+    return venueNames
+}
 
 export const Bands = () => {
     let html = "<ul>"

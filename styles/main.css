@@ -1,7 +1,25 @@
+body {
+    background-image: url("https://image.freepik.com/free-vector/barbed-wire-grunge-background-vector-illustration_24908-36552.jpg");
+    letter-spacing: 2px;
+    word-spacing: 2px;
+}
+
+#box {
+    background: url("https://tse4.mm.bing.net/th?id=OIP.1GR2LCpUhc_C5BQBs1XhvQHaHb&pid=Api&P=0&h=180");
+    border: 18px groove #660000;
+    -webkit-text-stroke: .3px red;
+    font-size: 20px;
+    font-family: 'Creepster', cursive;
+}
+
 
 .title {
-    border: 4px solid black;
+    background: url("https://tse1.mm.bing.net/th?id=OIP.3EMs8L005TrHjddOx8BVzwHaDX&pid=Api&P=0&h=180");
+    border: 10px solid black;
+    word-spacing: 35px;
+    font-size: 35px;
     text-align: center;
+    font-family: 'Creepster', cursive;
 }
 
 li {
@@ -17,7 +35,7 @@ li {
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 10px;
-    
+
 }
 
 .listTitle {
@@ -32,6 +50,5 @@ li {
 
 .detail--column {
     padding: 10px 40px 10px 10px;
-    border: 2px solid red;
+    border: 2px solid black;
 }
-
