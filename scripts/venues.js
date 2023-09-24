@@ -5,20 +5,20 @@ const bookings = getBookings()
 const bands = getBands()
 
 document.addEventListener(
-    "click",  
+    "click",
     (clickEvent) => {
         const itemClicked = clickEvent.target
 
         if (itemClicked.id.startsWith("venue")) {
-            const [,venueId] = itemClicked.id.split("--")
+            const [, venueId] = itemClicked.id.split("--")
 
             for (const venue of venues) {
-                
+
                 if (venue.id === parseInt(venueId)) {
-                   const assignments = filterBands(venue)
-                   const bandName = bookedBandNames(assignments)
-                   
-                   window.alert(` ${bandName} with be playing at ${venue.name}`)
+                    const assignments = filterBands(venue)
+                    const bandName = bookedBandNames(assignments)
+
+                    window.alert(` ${bandName} with be playing at ${venue.name}`)
                 }
             }
         }
@@ -29,8 +29,8 @@ document.addEventListener(
 const filterBands = (venue) => {
     const assignments = []
 
-        for (const assignment of bookings) {
-            if (assignment.venueId === venue.id) {
+    for (const assignment of bookings) {
+        if (assignment.venueId === venue.id) {
             assignments.push(assignment)
         }
     }
@@ -59,9 +59,10 @@ export const Venues = () => {
     let html = "<ul>"
 
     for (const venue of venues) {
-        html += ` <li id="venue--${venue.id}"> ${venue.name}</li>`}
+        html += ` <li id="venue--${venue.id}"> ${venue.name}</li>`
+    }
 
-     html += "</ul>"   
+    html += "</ul>"
 
-     return html
+    return html
 }
