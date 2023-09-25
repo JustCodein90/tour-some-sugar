@@ -35,9 +35,10 @@ export const Bookings = () => {
         const band = findBand(booking, bands)
         const venue = findVenues(booking, venues)
         html += ` <li id="booking--${booking.id}"> ${band.name} are playing at The ${venue.name}
-        on ${booking.date}</li>`}
+        on ${booking.date}</li>`
+    }
 
-     html += "</ul>"   
+    html += "</ul>"
 
-     return html
+    return html
 }
